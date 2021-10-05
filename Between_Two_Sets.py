@@ -31,6 +31,22 @@ if __name__ == '__main__':
 	for num_b in b:
 		a_b.append(num_b)
 
+
+	while min_interval < max_interval:
+		count = 0
+		for item in a_b:
+				if min_interval % item == 0 or item % min_interval == 0:
+					#print("for item:%d mod a_b:%d. count:%d" %(min_interval, item, count))
+					count += 1
+		if count == len(a_b):
+			divise.append(min_interval)
+			qnt_factors += 1
+		min_interval += 1
+	print("Qnt Factors: %d." %qnt_factors)
+	min_interval += 1
+	#print("Factors Interval: ", divise)
+	
+'''
 	#print("num_min:%d. num_max:%d" %(min_interval, max_interval))
 
 	#print("a_b:", a_b)
@@ -49,18 +65,4 @@ if __name__ == '__main__':
 			divise.append(item)
 
 	#print("Factors array: ", divise)
-
-	while min_interval < max_interval:
-		count = 0
-		min_interval += 1
-		for item in a_b:
-				if min_interval % item == 0 or item % min_interval == 0:
-					#print("for item:%d mod a_b:%d. count:%d" %(min_interval, item, count))
-					count += 1
-		if count == len(a_b):
-			divise.append(min_interval)
-			qnt_factors += 1
-
-	print("Qnt Factors: %d." %qnt_factors)
-	#print("Factors Interval: ", divise)
-
+'''
